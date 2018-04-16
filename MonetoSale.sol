@@ -190,7 +190,7 @@ contract MonetoSale {
         if (now >= PRE_SALE_START && now <= PRE_SALE_END) {
             return PRE_SALE_PRICE;
         }
-        if (now >= SALE_START && now <= SALE_START) {
+        if (now >= SALE_START && now <= SALE_END) {
             return SALE_PRICE;
         }
         return 0;
@@ -200,7 +200,7 @@ contract MonetoSale {
         if (now >= PRE_SALE_START && now <= PRE_SALE_END) {
             return PRE_SALE_MIN_BUY;
         }
-        if (now >= SALE_START && now <= SALE_START) {
+        if (now >= SALE_START && now <= SALE_END) {
             return SALE_MIN_BUY;
         }
         return 0;
