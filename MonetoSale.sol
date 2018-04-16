@@ -62,7 +62,7 @@ contract MonetoSale {
     function MonetoSale(address _beneficiary, address _alfatokenteam) public {
         beneficiary = _beneficiary;
         alfatokenteam = _alfatokenteam;
-        alfatokenFee = 7 ether;
+        alfatokenFee = 5 ether;
 
         stage = Stages.Deployed;
     }
