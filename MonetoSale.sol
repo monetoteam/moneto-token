@@ -101,7 +101,7 @@ contract MonetoSale {
     }
 
     function transferEther(address _to, uint _amount) public isOwner {
-        require(_amount <= this.balance - alfatokenFee);
+        require(_amount <= address(this).balance - alfatokenFee);
         require(now < SALE_START || stage == Stages.Ended);
         
         _to.transfer(_amount);
