@@ -29,7 +29,7 @@ contract StandardToken is BaseToken {
         balances[msg.sender] -= _value;
         balances[_to] += _value;
 
-        Transfer(msg.sender, _to, _value);
+        emit Transfer(msg.sender, _to, _value);
 
         return true;
     }
@@ -87,7 +87,7 @@ contract StandardToken is BaseToken {
         balances[_from] -= _value;
         allowed[_from][msg.sender] -= _value;
 
-        Transfer(_from, _to, _value);
+        emit Transfer(_from, _to, _value);
 
         return true;
     }
@@ -107,7 +107,7 @@ contract StandardToken is BaseToken {
         require(_value == 0 || allowed[msg.sender][_spender] == 0);
 
         allowed[msg.sender][_spender] = _value;
-        Approval(msg.sender, _spender, _value);
+        emit Approval(msg.sender, _spender, _value);
         return true;
     }
 

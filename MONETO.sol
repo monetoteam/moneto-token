@@ -13,7 +13,7 @@ contract Moneto is StandardToken {
 
     totalSupply = 42901786 * 10**18;
     balances[saleAddress] = totalSupply;
-    Transfer(0x0, saleAddress, totalSupply);
+    emit Transfer(0x0, saleAddress, totalSupply);
 
     assert(totalSupply == balances[saleAddress]);
   }
@@ -27,7 +27,7 @@ contract Moneto is StandardToken {
 
     balances[msg.sender] -= num;
     totalSupply -= num;
-    Transfer(msg.sender, 0x0, num);
+    emit Transfer(msg.sender, 0x0, num);
 
     assert(balances[msg.sender] == preBalance - num);
   }
